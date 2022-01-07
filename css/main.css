@@ -16,6 +16,14 @@ body {
     background: linear-gradient(90deg, #ff346b, #ff5345);
 }
 
+.btn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
 main {
     grid-area: main;
     display: grid;
@@ -36,6 +44,7 @@ header {
 nav {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 nav > a {
     color: #fff;
@@ -52,22 +61,73 @@ nav > a.active::after {
     right: 0;
     background-color: #fff;
 }
+.main-menu {
+    display: none;
+}
 
 section {
-    background-color: yellow;
+    display: grid;
+    gap: 40px;
+    color: #fff;
+    grid-template-areas:
+        'h1'
+        'p'
+        'btn'
+        'img';
 }
+section > h1 {
+    grid-area: h1;
+    font-size: 60px;
+}
+section > p {
+    grid-area: p;
+}
+section > .btn {
+    grid-area: btn;
+    justify-self: start;
+    align-self: start;
+}
+section > img {
+    grid-area: img;
+    width: 100%;
+    justify-self: center;
+}
+
 footer {
-    background-color: yellow;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+footer > .icon {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
 }
 
 @media (min-width: 700px) {
     body {
         grid-template-columns: 1fr 600px 1fr;
     }
+    .main-menu {
+        display: flex;
+    }
+    section > img {
+        width: 60%;
+    }
 }
 
 @media (min-width: 1100px) {
     body {
         grid-template-columns: 1fr 1000px 1fr;
+    }
+    section {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'h1 img'
+            'p img'
+            'btn img';
+    }
+    section > img {
+        width: 100%;
     }
 }
