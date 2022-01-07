@@ -18,6 +18,45 @@ body {
 
 main {
     grid-area: main;
+    display: grid;
+    gap: 40px;
+    align-content: space-between;
+    padding: 20px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+.logo {
+    height: 40px;
+}
+nav {
+    display: flex;
+    gap: 20px;
+}
+nav > a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+nav > a.active::after {
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+section {
+    background-color: yellow;
+}
+footer {
     background-color: yellow;
 }
 
